@@ -7,6 +7,8 @@ import io.scalecube.services.Microservices;
 import org.rapidoid.io.IO;
 import org.rapidoid.setup.On;
 
+import java.io.IOException;
+
 public class App {
 
   public static void main(String[] args) {
@@ -32,5 +34,12 @@ public class App {
       });
       return req;
     });
+    System.out.println("service started.");
+    try {
+      RunMvnFromJava.runCommand("mvn gatling:execute");
+    } catch (IOException e) {
+      System.exit(0);
+    }
+        
   }
 }
