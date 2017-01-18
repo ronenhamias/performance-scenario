@@ -7,12 +7,10 @@ import io.scalecube.services.Microservices;
 import org.rapidoid.io.IO;
 import org.rapidoid.setup.On;
 
-import java.io.IOException;
-
 public class App {
 
   public static void main(String[] args) {
-
+    System.out.println("service starting...");
     Microservices gateway = Microservices.builder().build();
 
     Microservices provider = Microservices.builder()
@@ -34,12 +32,8 @@ public class App {
       });
       return req;
     });
-    System.out.println("service started.");
-    try {
-      RunMvnFromJava.runCommand("mvn gatling:execute");
-    } catch (IOException e) {
-      System.exit(0);
-    }
-        
+    System.out.println("service started.");     
   }
+  
+  
 }
