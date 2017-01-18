@@ -8,4 +8,6 @@ before_install:
   - curl https://api.dropbox.com/1/oauth2/token -d grant_type=authorization_code -d code="$DB_APIKEY" -u $DB_APP_KEY:$DB_APP_SECRET
   
 after_success:
-  ./dropbox_uploader.sh upload /home/travis/build/scalecube/performance-scenario/target/gatling/* /
+  - ./dropbox_uploader.sh upload /home/travis/build/scalecube/performance-scenario/target/gatling/* /
+  - echo $DB_APIKEY
+  - echo y
