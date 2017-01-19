@@ -10,7 +10,7 @@ import org.rapidoid.setup.On;
 public class App {
 
   public static void main(String[] args) {
-
+    System.out.println("service starting...");
     Microservices gateway = Microservices.builder().build();
 
     Microservices provider = Microservices.builder()
@@ -32,5 +32,8 @@ public class App {
       });
       return req;
     });
+    System.out.println("service started.");     
   }
+  
+  
 }
