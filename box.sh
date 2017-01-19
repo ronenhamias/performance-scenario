@@ -1,4 +1,5 @@
 #!/bin/bash
+#./upload.sh <token> reports/basic upload.sh
 
 ACCESS_TOKEN="$1"
 BOX_PATH="$2"
