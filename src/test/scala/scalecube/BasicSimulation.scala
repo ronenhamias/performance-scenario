@@ -13,6 +13,6 @@ class BasicSimulation extends Simulation {
 		exec(http("greeting").get("http://localhost:8080/do"))
 	}
 
-	setUp(scn.inject(rampUsers(2200) over (180 seconds)))
+	setUp(scn.inject(rampUsers(5000) over (180 seconds)))
 
 }
