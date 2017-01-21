@@ -7,7 +7,7 @@ addons:
 
 before_install:
    # Get the deploy key by using Travis's stored variables to decrypt deploy_key.
-  - openssl aes-256-cbc aes-256-cbc -K $encrypted_f41f4efce4cd_key -iv $encrypted_f41f4efce4cd_iv -in deploy_key.enc -out /tmp/deploy_key -d
+  - openssl aes-256-cbc -K $encrypted_72f66166909e_key -iv $encrypted_72f66166909e_iv -in deploy_key.enc -out /tmp/deploy_key -d
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_key
   - ssh-add /tmp/deploy_key
