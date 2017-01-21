@@ -9,7 +9,7 @@ class BasicSimulation extends Simulation {
 
     io.scalecube.scalecube.performance.App.main(null)
    	
-	val scn = scenario("scalecube-greeting").repeat(200, "count") { 
+	val scn = scenario("scalecube-greeting").repeat(300, "count") { 
 		exec(http("greeting").get("http://localhost:8080/do"))
 	}
 
