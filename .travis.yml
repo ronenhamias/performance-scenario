@@ -4,6 +4,6 @@ jdk:
 
 
 after_success:
-  - sh git_push.sh
+  - bash git_push.sh
 
  
