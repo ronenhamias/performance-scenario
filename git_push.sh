@@ -7,6 +7,7 @@ setup_git() {
   git clone git@github.com:ScalecubePerf/ScalecubePerf.github.io.git
   cp -rf ./target/gatling/ ./ScalecubePerf.github.io
   cd ScalecubePerf.github.io
+  find . -name "*.log" -type f -delete
 }
 
 commit_website_files() {
