@@ -20,12 +20,10 @@ class BasicSimulation extends Simulation {
    setUp( 
     scn.inject(
 	    nothingFor(1 seconds), // 1
-	    atOnceUsers(1000), // 2
-	    rampUsers(2000) over(20 seconds), // 3
-	    constantUsersPerSec(2000) during(20 seconds), // 4
-	    rampUsers(4000) over(20 seconds), // 3
-	    constantUsersPerSec(5000) during(120 seconds) randomized // 5
+	    atOnceUsers(1), // 2
+	    rampUsers(1) over(1 seconds), // 3
+	    constantUsersPerSec(1) during(1 seconds), // 4
+	    rampUsers(1) over(20 seconds), // 3
+	    constantUsersPerSec(1) during(20 seconds) randomized // 5
     )).protocols(httpConf)
-  
-   
 }
