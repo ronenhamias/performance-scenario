@@ -8,6 +8,7 @@ setup_git() {
 
 commit_website_files() {
   cp -rf ./target/gatling/ ./ScalecubePerf.github.io
+  cp ./deploy_key.enc ./ScalecubePerf.github.io/deploy_key.enc
   cd ScalecubePerf.github.io
   git add . 
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
