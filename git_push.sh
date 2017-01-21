@@ -3,7 +3,7 @@
 setup_git() {
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "Travis CI"
-  git clone https://github.com/ScalecubePerf/ScalecubePerf.github.io.git
+  git clone git@github.com:ScalecubePerf/ScalecubePerf.github.io.git
 }
 
 commit_website_files() {
@@ -19,6 +19,7 @@ upload_files() {
   ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
   ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
   ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+  echo ENCRYPTED_KEY ENCRYPTED_IV
   openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
 
   chmod 600 deploy_key
@@ -26,7 +27,7 @@ upload_files() {
   ssh-add deploy_key
 
   # Now that we're all set up, we can push.
-  git push $SSH_REPO $TARGET_BRANCH
+  git push
  
 }
 
