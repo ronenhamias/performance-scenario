@@ -13,11 +13,16 @@ public class App {
 
     Microservices gateway = Microservices.builder().build();
 
-    Microservices provider = Microservices.builder()
+    Microservices.builder()
         .seeds(gateway.cluster().address())
         .services(new GreetingServiceImpl())
         .build();
 
+    Microservices.builder()
+        .seeds(gateway.cluster().address())
+        .services(new GreetingServiceImpl())
+        .build();
+    
     GreetingService service = gateway.proxy().api(GreetingService.class).create();
     On.port(8080).route("GET", "/do").plain(req -> {
       req.async();
