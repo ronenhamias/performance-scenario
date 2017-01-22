@@ -11,6 +11,7 @@ before_install:
   - eval "$(ssh-agent -s)"
   - chmod 600 /tmp/deploy_key
   - ssh-add /tmp/deploy_key
+  - ulimit -s 1082768  # Require a bit of more memory.
 
 after_success:
   - bash git_push.sh
